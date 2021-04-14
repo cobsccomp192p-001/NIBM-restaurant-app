@@ -23,7 +23,24 @@ class NewCategoryViewController: UIViewController {
     @IBOutlet weak var txtName: UITextField!
     
     @IBAction func btnAdd(_ sender: RoundedButton) {
-        print("hello")
+        
+        let catName = txtName.text
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("categories").addDocument(data: [
+            "name": catName as Any
+            
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                DispatchQueue.main.async {
+                    self.categoryTableView.reloadData()
+                }
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -37,7 +54,7 @@ class NewCategoryViewController: UIViewController {
     
     func loadCategories()
     {
-        db.collection(K.fire.categoryCollection).getDocuments{(documentSnapshot, error) in
+        db.collection(K.fire.categoryCollection).addSnapshotListener{(documentSnapshot, error) in
             if let e=error
             {
                 print("failed to load data \(e)")
