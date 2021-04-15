@@ -80,6 +80,21 @@ class NewCategoryViewController: UIViewController {
             }
         }
     }
+    
+    func deleteCategory(index: Int)
+    {
+        db.collection("categories").document(categories[index].catId).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+                
+            }
+        }
+        self.categories.removeAll()
+        self.categoryTableView.reloadData()
+        
+    }
   
     
 
@@ -101,11 +116,11 @@ extension NewCategoryViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, complete in
-//                self.Items.remove(at: indexPath.row)
-//                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+                self.deleteCategory(index: indexPath.row)
                 complete(true)
             }
-            
+        
             deleteAction.image = UIImage(named: "delete")
             deleteAction.backgroundColor = .red
             
@@ -120,8 +135,8 @@ extension NewCategoryViewController:UITableViewDataSource{
         
         func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UIContextualAction]? {
             let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _,_  in
-//                self.Items.remove(at: indexPath.row)
-//                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+
+                self.deleteCategory(index: indexPath.row)
             }
             deleteAction.image = UIImage(named: "delete")
             deleteAction.backgroundColor = .red
@@ -130,8 +145,10 @@ extension NewCategoryViewController:UITableViewDataSource{
     
     
 }
+
 extension NewCategoryViewController:UITableViewDelegate{
     
     
     
 }
+
