@@ -9,7 +9,7 @@ import UIKit
 
 class FoodDetailViewController: UIViewController {
     var name = ""
-    var price:Float=0.0
+    var price = ""
     var desc=""
     
     @IBOutlet weak var temp: UILabel!
@@ -22,7 +22,7 @@ class FoodDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         TitleLabel.text = name
-        priceLabel.text = "\(price)"
+        priceLabel.text = price
         descLabel.text=desc
         
     }

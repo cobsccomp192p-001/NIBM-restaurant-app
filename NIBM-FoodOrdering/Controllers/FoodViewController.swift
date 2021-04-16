@@ -69,7 +69,7 @@ class FoodViewController: UIViewController {
                 if let snapshotDocument = querySnapshot?.documents{
                     for doc in snapshotDocument {
                         let data = doc.data()
-                        if let  foodName = data[K.fire.foodName] as? String, let foodPrice = data[K.fire.foodPrice] as? Float, let foodDescription = data[K.fire.foodDescription] as? String, let foodCatID = data[K.fire.foodCatID] as? String, let FoodCatType = data[K.fire.FoodCatType] as? String
+                        if let  foodName = data[K.fire.foodName] as? String, let foodPrice = data[K.fire.foodPrice] as? String, let foodDescription = data[K.fire.foodDescription] as? String, let foodCatID = data[K.fire.foodCatID] as? String, let FoodCatType = data[K.fire.FoodCatType] as? String
                         {
                             let newFood = Food(title: foodName, uprice: foodPrice, description: foodDescription, type: FoodCatType, category: foodCatID)
                             self.foods.append(newFood)

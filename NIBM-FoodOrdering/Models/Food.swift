@@ -10,7 +10,7 @@ import Foundation
 struct Food
 {
     let title: String
-    let uprice: Float
+    let uprice: String
     let description: String
     let type: String
     let category: String

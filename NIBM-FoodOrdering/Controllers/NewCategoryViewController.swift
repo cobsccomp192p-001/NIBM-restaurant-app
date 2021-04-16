@@ -34,9 +34,6 @@ class NewCategoryViewController: UIViewController {
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
-//                DispatchQueue.main.async {
-//                    self.categoryTableView.reloadData()
-//                }
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
