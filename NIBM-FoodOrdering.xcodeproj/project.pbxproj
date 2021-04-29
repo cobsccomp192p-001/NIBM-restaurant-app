@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57532B23263A852300B9F74D /* OrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57532B22263A852300B9F74D /* OrderList.swift */; };
+		57A811102639336B00DDAA69 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A8110F2639336B00DDAA69 /* OrderDetailViewController.swift */; };
 		57ABD1212626AC9D00EB1FF0 /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ABD1202626AC9D00EB1FF0 /* NewCategoryViewController.swift */; };
 		57ABD1242626B14C00EB1FF0 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ABD1232626B14C00EB1FF0 /* HelperFunctions.swift */; };
 		57ABD12B2626BD5100EB1FF0 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ABD12A2626BD5100EB1FF0 /* RoundButton.swift */; };
 		57ACE21C2629A3AE00A953E2 /* NewFoodItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ACE21B2629A3AE00A953E2 /* NewFoodItemViewController.swift */; };
+		57D086502637085500460F7C /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0864F2637085500460F7C /* Orders.swift */; };
 		57E7F6AD26229DF200D34FA5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7F6AC26229DF200D34FA5 /* Category.swift */; };
 		7440AFF425F0B6A300F65838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440AFF325F0B6A300F65838 /* AppDelegate.swift */; };
 		7440AFF625F0B6A300F65838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440AFF525F0B6A300F65838 /* SceneDelegate.swift */; };
@@ -33,10 +36,13 @@
 
 /* Begin PBXFileReference section */
 		2559724B5DB49CFD50F2F922 /* Pods_NIBM_FoodOrdering.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_FoodOrdering.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57532B22263A852300B9F74D /* OrderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderList.swift; sourceTree = "<group>"; };
+		57A8110F2639336B00DDAA69 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		57ABD1202626AC9D00EB1FF0 /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		57ABD1232626B14C00EB1FF0 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		57ABD12A2626BD5100EB1FF0 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		57ACE21B2629A3AE00A953E2 /* NewFoodItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodItemViewController.swift; sourceTree = "<group>"; };
+		57D0864F2637085500460F7C /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		57E7F6AC26229DF200D34FA5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7440AFF025F0B6A300F65838 /* NIBM-FoodOrdering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM-FoodOrdering.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7440AFF325F0B6A300F65838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +137,8 @@
 			children = (
 				74D3B29125F5190400A85628 /* Food.swift */,
 				57E7F6AC26229DF200D34FA5 /* Category.swift */,
+				57D0864F2637085500460F7C /* Orders.swift */,
+				57532B22263A852300B9F74D /* OrderList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 				74D3B2A425F5506600A85628 /* AccountViewController.swift */,
 				57ABD1202626AC9D00EB1FF0 /* NewCategoryViewController.swift */,
 				57ACE21B2629A3AE00A953E2 /* NewFoodItemViewController.swift */,
+				57A8110F2639336B00DDAA69 /* OrderDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,15 +286,18 @@
 			files = (
 				57ABD12B2626BD5100EB1FF0 /* RoundButton.swift in Sources */,
 				7443469425F15DF7003ED230 /* LocationViewController.swift in Sources */,
+				57532B23263A852300B9F74D /* OrderList.swift in Sources */,
 				7440B01525F0B77300F65838 /* LoginViewController.swift in Sources */,
 				74D3B2A525F5506600A85628 /* AccountViewController.swift in Sources */,
 				74D3B2A225F53FCF00A85628 /* FoodDetailViewController.swift in Sources */,
 				7440B01625F0B77300F65838 /* WelcomeViewController.swift in Sources */,
+				57D086502637085500460F7C /* Orders.swift in Sources */,
 				57ABD1242626B14C00EB1FF0 /* HelperFunctions.swift in Sources */,
 				57ACE21C2629A3AE00A953E2 /* NewFoodItemViewController.swift in Sources */,
 				7440AFF425F0B6A300F65838 /* AppDelegate.swift in Sources */,
 				74D3B28F25F5160F00A85628 /* FoodViewController.swift in Sources */,
 				7440B01825F0B77300F65838 /* RegisterViewController.swift in Sources */,
+				57A811102639336B00DDAA69 /* OrderDetailViewController.swift in Sources */,
 				7440AFF625F0B6A300F65838 /* SceneDelegate.swift in Sources */,
 				57E7F6AD26229DF200D34FA5 /* Category.swift in Sources */,
 				74D3B29225F5190400A85628 /* Food.swift in Sources */,

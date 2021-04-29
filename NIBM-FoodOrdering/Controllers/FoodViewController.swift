@@ -29,9 +29,10 @@ class FoodViewController: UIViewController {
         navigationItem.hidesBackButton=true
         foodTableView.dataSource=self
         foodTableView.delegate=self
-        loadFood()
         loadCategories()
+        loadFood()
     }
+    
     func loadCategories()
     {
         categories = []
@@ -49,8 +50,15 @@ class FoodViewController: UIViewController {
                         {
                             let newCat = Category(name: catName, catId: ID)
                             self.categories.append(newCat)
+                            DispatchQueue.main.async {
+                                self.foodTableView.reloadData()
+                            }
+                            
                         }
                     }
+                    
+                    
+                    
                 }
             }
         }
@@ -73,12 +81,13 @@ class FoodViewController: UIViewController {
                         {
                             let newFood = Food(title: foodName, uprice: foodPrice, description: foodDescription, type: FoodCatType, category: foodCatID)
                             self.foods.append(newFood)
-                            
                             DispatchQueue.main.async {
                                 self.foodTableView.reloadData()
                             }
+                            
                         }
                     }
+              
                 }
             }
         }
@@ -88,31 +97,34 @@ class FoodViewController: UIViewController {
 
 extension FoodViewController:UITableViewDataSource{
     
-//    func getCategoryName(index: Int) -> String
-//    {
-//        let catName=categories[index].name
-//        return catName
-//    }
-    
-//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//            return categories.count
-//        }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return categories.count
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count
+        
+        
+        var filterArr: [Food] = []
+        filterArr = foods.filter{($0.type.contains(categories[section].name))}
+        
+        return filterArr.count
     }
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return getCategoryName(index: section)
-//      }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let filterData = foods.filter({$0.type == getCategoryName(index: indexPath.section)})
-//        let foodDetails = filterData[indexPath.row]
+        
+        var filterArr: [Food] = []
+        filterArr = foods.filter{($0.type.contains(categories[indexPath.section].name))}
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MyCustomCell
-        cell.FoodNameLabel.text = foods[indexPath.row].title
-        cell.FoodPriceLabel.text = "\(foods[indexPath.row].uprice)"
+        cell.FoodNameLabel.text = filterArr[indexPath.row].title
+        cell.FoodPriceLabel.text = "\(filterArr[indexPath.row].uprice)"
         return cell
     }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return categories[section].name
+      }
     
     
 }
