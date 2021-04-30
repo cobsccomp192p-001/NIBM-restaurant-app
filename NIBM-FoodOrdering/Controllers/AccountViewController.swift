@@ -42,6 +42,13 @@ class AccountViewController: UIViewController {
     }
     
 
+    @IBAction func printBtn(_ sender: Any) {
+        let pdfFilePath = self.orderHistoryTableView.exportAsPdfFromTable()
+        let alert = UIAlertController(title: "Your File path", message: pdfFilePath, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil ))
+        self.present(alert, animated: true, completion: nil)
+//        print(pdfFilePath)
+    }
     @IBAction func LogoutBtn(_ sender: Any) {
         do {
           try Auth.auth().signOut()
@@ -99,4 +106,38 @@ extension AccountViewController:UITableViewDataSource{
     }
     
     
+}
+extension UITableView {
+    
+    // Export pdf from UITableView and save pdf in drectory and return pdf file path
+    func exportAsPdfFromTable() -> String {
+        
+        let originalBounds = self.bounds
+        self.bounds = CGRect(x:originalBounds.origin.x, y: originalBounds.origin.y, width: self.contentSize.width, height: self.contentSize.height)
+        let pdfPageFrame = CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.contentSize.height)
+        
+        let pdfData = NSMutableData()
+        UIGraphicsBeginPDFContextToData(pdfData, pdfPageFrame, nil)
+        UIGraphicsBeginPDFPageWithInfo(pdfPageFrame, nil)
+        guard let pdfContext = UIGraphicsGetCurrentContext() else { return "" }
+        self.layer.render(in: pdfContext)
+        UIGraphicsEndPDFContext()
+        self.bounds = originalBounds
+        // Save pdf data
+        return self.saveTablePdf(data: pdfData)
+        
+    }
+    
+    // Save pdf file in document directory
+    func saveTablePdf(data: NSMutableData) -> String {
+        
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let docDirectoryPath = paths[0]
+        let pdfPath = docDirectoryPath.appendingPathComponent("tablePdf.pdf")
+        if data.write(to: pdfPath, atomically: true) {
+            return pdfPath.path
+        } else {
+            return ""
+        }
+    }
 }
