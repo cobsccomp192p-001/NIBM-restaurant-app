@@ -37,12 +37,13 @@ class FoodViewController: UIViewController {
     {
         categories = []
         
-        db.collection(K.fire.categoryCollection).getDocuments{(querySnapshot,error) in
+        db.collection(K.fire.categoryCollection).addSnapshotListener{(querySnapshot,error) in
             if let e=error
             {
                 print("failed to load data \(e)")
             }
             else{
+                self.categories.removeAll()
                 if let snapshotDocument = querySnapshot?.documents{
                     for doc in snapshotDocument{
                         let data = doc.data()
@@ -68,12 +69,13 @@ class FoodViewController: UIViewController {
     {
         foods = []
         
-        db.collection(K.fire.foodColection).getDocuments{(querySnapshot,error) in
+        db.collection(K.fire.foodColection).addSnapshotListener{(querySnapshot,error) in
             if let e=error
             {
                 print("failed to load data.  \(e)")
             }
             else{
+                self.foods.removeAll()
                 if let snapshotDocument = querySnapshot?.documents{
                     for doc in snapshotDocument {
                         let data = doc.data()
@@ -133,9 +135,11 @@ extension FoodViewController:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let  next = (storyboard?.instantiateViewController(identifier: "FoodDetailViewController") as! FoodDetailViewController)
-        
         self.navigationController?.pushViewController(next, animated: true)
-        let foo = foods[indexPath.row]
+        
+        var filterArr: [Food] = []
+        filterArr = foods.filter{($0.type.contains(categories[indexPath.section].name))}
+        let foo = filterArr[indexPath.row]
         next.name=foo.title
         next.price=foo.uprice
         next.desc=foo.description

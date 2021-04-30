@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5701D343263AEEDC00D1CF66 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701D342263AEEDC00D1CF66 /* Status.swift */; };
 		57532B23263A852300B9F74D /* OrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57532B22263A852300B9F74D /* OrderList.swift */; };
 		57A811102639336B00DDAA69 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A8110F2639336B00DDAA69 /* OrderDetailViewController.swift */; };
 		57ABD1212626AC9D00EB1FF0 /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ABD1202626AC9D00EB1FF0 /* NewCategoryViewController.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		2559724B5DB49CFD50F2F922 /* Pods_NIBM_FoodOrdering.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_FoodOrdering.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5701D342263AEEDC00D1CF66 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		57532B22263A852300B9F74D /* OrderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderList.swift; sourceTree = "<group>"; };
 		57A8110F2639336B00DDAA69 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		57ABD1202626AC9D00EB1FF0 /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				57E7F6AC26229DF200D34FA5 /* Category.swift */,
 				57D0864F2637085500460F7C /* Orders.swift */,
 				57532B22263A852300B9F74D /* OrderList.swift */,
+				5701D342263AEEDC00D1CF66 /* Status.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			files = (
 				57ABD12B2626BD5100EB1FF0 /* RoundButton.swift in Sources */,
 				7443469425F15DF7003ED230 /* LocationViewController.swift in Sources */,
+				5701D343263AEEDC00D1CF66 /* Status.swift in Sources */,
 				57532B23263A852300B9F74D /* OrderList.swift in Sources */,
 				7440B01525F0B77300F65838 /* LoginViewController.swift in Sources */,
 				74D3B2A525F5506600A85628 /* AccountViewController.swift in Sources */,

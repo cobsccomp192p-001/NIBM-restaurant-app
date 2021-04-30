@@ -12,14 +12,17 @@ struct Orders {
     let status: String
     let orderID: String
     let statusName: String
-//    let items: [Array<Any>]
-//    let foodName: String
-//    let quantity: String
-//    let uPrice:String
+    let netAmount: String
+    let docId: String
+
 }
 struct OrderItemInfo {
-    var foodName:String
-    var quantity:String
-    var unitPrice:String
-    var orderId:String
+    let foodName:String
+    let quantity:String
+    let unitPrice:String
+//    let orderId:String
+}
+
+struct other{
+    let docID:String
 }

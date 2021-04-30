@@ -12,6 +12,7 @@ struct K{
     static let cellIdentifier = "ReusableCell"
     static let cellIdentifier2 = "ReusableCell2"
     static let cellIdentifier3 = "ReusableCell3"
+    static let cellIdentifier4 = "ReusableCell4"
     
     struct fire
     {
@@ -19,6 +20,7 @@ struct K{
         static let foodColection = "FoodItems"
         static let categoryCollection = "categories"
         static let orderCollection = "orderList"
+        static let statusCollection = "statusDet"
         static let catName = "name"
         static let foodName = "name"
         static let foodPrice = "price"
@@ -26,6 +28,7 @@ struct K{
         static let foodCatID = "category"
         static let FoodCatType = "type"
         static let uid = "uid"
+        
     }
     struct orderList
     {
@@ -35,6 +38,12 @@ struct K{
         static let foodName = "foodName"
         static let quantity = "quantity"
         static let uprice = "uPrice"
+        static let statusName = "statusName"
+        static let netAmount = "netAmount"
+    }
+    struct status
+    {
+        static let statusId = "statusId"
         static let statusName = "statusName"
     }
     
