@@ -131,19 +131,26 @@ class OrderViewController: UIViewController {
     
     func rejectOrder(docId:String)
     {
-        let orderRef = db.collection(K.fire.orderCollection).document(docId)
+        let alert = UIAlertController(title: "Reject", message: "Are you sure you wanna Reject?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {_ in
+            let orderRef = self.db.collection(K.fire.orderCollection).document(docId)
 
-        
-        orderRef.updateData([
-            "status": "6",
-            "statusName": "Cancel"
-        ]) { err in
-            if let err = err {
-                print("Error updating document: \(err)")
-            } else {
-                print("Document successfully updated")
+            
+            orderRef.updateData([
+                "status": "6",
+                "statusName": "Cancel"
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
             }
-        }
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
 
 }
