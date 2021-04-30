@@ -819,7 +819,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ix3-2A-IGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3328.985507246377" y="1078.7946428571429"/>
+            <point key="canvasLocation" x="3326" y="1096"/>
         </scene>
         <!--Order-->
         <scene sceneID="Gbq-QZ-d38">
@@ -924,7 +924,7 @@
                     <tabBarItem key="tabBarItem" title="Order" image="order" id="maN-JG-Su7"/>
                     <connections>
                         <outlet property="orderTableView" destination="85E-IX-wXM" id="FZE-cg-Yoa"/>
-                        <segue destination="7qu-A3-k0u" kind="show" id="wfp-M4-Tdn"/>
+                        <segue destination="7qu-A3-k0u" kind="show" identifier="detailToOrder" id="wfp-M4-Tdn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCl-wW-IUT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

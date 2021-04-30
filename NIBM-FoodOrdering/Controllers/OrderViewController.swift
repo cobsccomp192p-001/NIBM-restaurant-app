@@ -20,13 +20,13 @@ class MyCustomCell3: UITableViewCell{
     
     var acceptTap: (() -> Void)? = nil
     var rejectTap: (() -> Void)? = nil
-//    @IBAction func aceeptBtn(_ sender: Any) {
-//        acceptTap?()
-//    }
-//    
-//    @IBAction func rejectBtn(_ sender: Any) {
-//        rejectTap?()
-//    }
+    @IBAction func aceeptBtn(_ sender: Any) {
+        acceptTap?()
+    }
+    
+    @IBAction func rejectBtn(_ sender: Any) {
+        rejectTap?()
+    }
     
 }
 
@@ -135,7 +135,7 @@ class OrderViewController: UIViewController {
 
         
         orderRef.updateData([
-            "status": "5",
+            "status": "6",
             "statusName": "Cancel"
         ]) { err in
             if let err = err {
@@ -178,22 +178,22 @@ extension OrderViewController:UITableViewDataSource{
             cell.btnReject.isHidden=false
         }
         
-//        cell.acceptTap = {
-//            self.approveOrder(docId: filterArr[indexPath.row].docId)
-//            self.orderTableView.reloadData()
-//        }
-//        cell.rejectTap = {
-//            self.rejectOrder(docId: filterArr[indexPath.row].docId)
-//            self.orderTableView.reloadData()
-//        }
+        cell.acceptTap = {
+            self.approveOrder(docId: filterArr[indexPath.row].docId)
+            self.orderTableView.reloadData()
+        }
+        cell.rejectTap = {
+            self.rejectOrder(docId: filterArr[indexPath.row].docId)
+            self.orderTableView.reloadData()
+        }
         
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//        return status[section].statusName
-//      }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+
+        return status[section].statusName
+      }
     
     
 }

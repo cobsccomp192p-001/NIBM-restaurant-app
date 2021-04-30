@@ -63,6 +63,16 @@ class OrderDetailViewController: UIViewController {
         
     }
     
+    func alertMsg()
+    {
+        let alert = UIAlertController(title: "Success", message: "Status change success", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in 
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func readyBtn(_ sender: Any) {
         let orderRef = db.collection(K.fire.orderCollection).document(self.docID)
 
@@ -74,12 +84,27 @@ class OrderDetailViewController: UIViewController {
             if let err = err {
                 print("Error updating document: \(err)")
             } else {
-                print("Document successfully updated")
+                self.alertMsg()
+                
+                
             }
         }
     }
     @IBAction func doneBtn(_ sender: Any) {
+        let orderRef = db.collection(K.fire.orderCollection).document(self.docID)
+
         
+        orderRef.updateData([
+            "status": "5",
+            "statusName": "Done"
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                self.alertMsg()
+                
+            }
+        }
     }
     func loadOrderDetails()
     {
