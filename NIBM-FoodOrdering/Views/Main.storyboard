@@ -446,6 +446,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCi-ON-Up9">
+                                                    <rect key="frame" x="324" y="81" width="70" height="21"/>
+                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="98" id="Dxs-Jg-qZf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cTt-Lt-JDz" firstAttribute="top" secondItem="a9J-M4-bZh" secondAttribute="topMargin" id="0Ax-Ix-6qR"/>
@@ -453,6 +463,8 @@
                                                 <constraint firstItem="Hg3-Tr-lfL" firstAttribute="top" secondItem="a9J-M4-bZh" secondAttribute="top" id="As8-dx-tYH"/>
                                                 <constraint firstItem="9EX-FL-v4J" firstAttribute="top" secondItem="cTt-Lt-JDz" secondAttribute="bottom" constant="40" id="X3O-gl-q1t"/>
                                                 <constraint firstItem="cTt-Lt-JDz" firstAttribute="leading" secondItem="Hg3-Tr-lfL" secondAttribute="trailing" constant="8" symbolic="YES" id="X7L-gG-HfJ"/>
+                                                <constraint firstItem="qCi-ON-Up9" firstAttribute="trailing" secondItem="cTt-Lt-JDz" secondAttribute="trailing" id="Xkm-CF-Mb5"/>
+                                                <constraint firstItem="qCi-ON-Up9" firstAttribute="top" secondItem="cTt-Lt-JDz" secondAttribute="bottom" constant="39" id="b3c-9H-D3A"/>
                                                 <constraint firstItem="Hg3-Tr-lfL" firstAttribute="leading" secondItem="a9J-M4-bZh" secondAttribute="leading" id="bQ0-7s-Jql"/>
                                                 <constraint firstItem="cTt-Lt-JDz" firstAttribute="leading" secondItem="Hg3-Tr-lfL" secondAttribute="trailing" constant="8" symbolic="YES" id="kiT-rl-JWe"/>
                                                 <constraint firstItem="cTt-Lt-JDz" firstAttribute="top" secondItem="a9J-M4-bZh" secondAttribute="topMargin" id="qsR-ai-Q1G"/>
@@ -464,6 +476,7 @@
                                         <connections>
                                             <outlet property="FoodNameLabel" destination="cTt-Lt-JDz" id="ng2-q6-Ka1"/>
                                             <outlet property="FoodPriceLabel" destination="9EX-FL-v4J" id="d0e-SZ-V0b"/>
+                                            <outlet property="discountLabel" destination="qCi-ON-Up9" id="y7s-N9-8zN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1168,6 +1181,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

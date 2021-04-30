@@ -29,6 +29,7 @@ struct K{
         static let foodCatID = "category"
         static let FoodCatType = "type"
         static let uid = "uid"
+        static let discount = "discount"
         
     }
     struct orderList

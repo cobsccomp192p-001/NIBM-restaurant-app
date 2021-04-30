@@ -14,4 +14,5 @@ struct Food
     let description: String
     let type: String
     let category: String
+    let discount: String
 }

@@ -13,6 +13,7 @@ class MyCustomCell: UITableViewCell {
     
     @IBOutlet weak var FoodNameLabel: UILabel!
     
+    @IBOutlet weak var discountLabel: UILabel!
     @IBOutlet weak var FoodPriceLabel: UILabel!
 }
 
@@ -79,9 +80,9 @@ class FoodViewController: UIViewController {
                 if let snapshotDocument = querySnapshot?.documents{
                     for doc in snapshotDocument {
                         let data = doc.data()
-                        if let  foodName = data[K.fire.foodName] as? String, let foodPrice = data[K.fire.foodPrice] as? String, let foodDescription = data[K.fire.foodDescription] as? String, let foodCatID = data[K.fire.foodCatID] as? String, let FoodCatType = data[K.fire.FoodCatType] as? String
+                        if let  foodName = data[K.fire.foodName] as? String, let foodPrice = data[K.fire.foodPrice] as? String, let foodDescription = data[K.fire.foodDescription] as? String, let foodCatID = data[K.fire.foodCatID] as? String, let FoodCatType = data[K.fire.FoodCatType] as? String, let discount = data[K.fire.discount] as? String
                         {
-                            let newFood = Food(title: foodName, uprice: foodPrice, description: foodDescription, type: FoodCatType, category: foodCatID)
+                            let newFood = Food(title: foodName, uprice: foodPrice, description: foodDescription, type: FoodCatType, category: foodCatID,discount: discount)
                             self.foods.append(newFood)
                             DispatchQueue.main.async {
                                 self.foodTableView.reloadData()
@@ -121,6 +122,14 @@ extension FoodViewController:UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MyCustomCell
         cell.FoodNameLabel.text = filterArr[indexPath.row].title
         cell.FoodPriceLabel.text = "\(filterArr[indexPath.row].uprice)"
+        if filterArr[indexPath.row].discount != "0"
+        {
+            cell.discountLabel.text = "-\(filterArr[indexPath.row].discount)%"
+        }
+        else
+        {
+            cell.discountLabel.isHidden=true
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
