@@ -25,7 +25,8 @@ class OrderDetailViewController: UIViewController {
     var status = ""
     var netAmount = ""
     var statusID = ""
-    var docID = "" 
+    var docID = ""
+    var mobileNumber = ""
     var orderDet: [OrderItemInfo] = []
    
     @IBOutlet weak var netAmountLabel: UILabel!
@@ -61,6 +62,11 @@ class OrderDetailViewController: UIViewController {
         orderDetail.dataSource=self
         loadOrderDetails()
         
+    }
+    
+    @IBAction func callBtn(_ sender: Any) {
+        guard let number = URL(string: "tel://\(mobileNumber)") else { return }
+        UIApplication.shared.open(number)
     }
     
     func alertMsg()

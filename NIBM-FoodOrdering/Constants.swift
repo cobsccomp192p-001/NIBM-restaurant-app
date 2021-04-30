@@ -13,6 +13,7 @@ struct K{
     static let cellIdentifier2 = "ReusableCell2"
     static let cellIdentifier3 = "ReusableCell3"
     static let cellIdentifier4 = "ReusableCell4"
+    static let cellIdentifier5 = "ReusableCell5"
     
     struct fire
     {
