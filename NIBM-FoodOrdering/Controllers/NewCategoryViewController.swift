@@ -24,6 +24,10 @@ class NewCategoryViewController: UIViewController {
     
     @IBAction func btnAdd(_ sender: RoundedButton) {
         
+        if txtName.text!.isEmpty{
+            AlertMesg(msg: "Enter all fieldss")
+        }
+        else{
         let catName = txtName.text
         
         var ref: DocumentReference? = nil
@@ -35,12 +39,13 @@ class NewCategoryViewController: UIViewController {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
+                self.AlertMesg(msg: "Data added successfully")
             }
         }
         self.categories.removeAll()
         categoryTableView.reloadData()
         txtName.text=""
-        
+        }
         
     }
     
@@ -80,17 +85,33 @@ class NewCategoryViewController: UIViewController {
     
     func deleteCategory(index: Int)
     {
-        db.collection("categories").document(categories[index].catId).delete() { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-            } else {
-                print("Document successfully removed!")
-                
+        let alert = UIAlertController(title: "Reject", message: "Are you sure you wanna Delete?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {_ in
+           
+            self.db.collection("categories").document(self.categories[index].catId).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                    
+                }
             }
-        }
-        self.categories.removeAll()
-        self.categoryTableView.reloadData()
+            self.categories.removeAll()
+            self.categoryTableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
         
+        
+        
+    }
+    func AlertMesg(msg:String)
+    {
+        let dialogMessage = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        dialogMessage.addAction(ok)
+         
+        self.present(dialogMessage, animated: true, completion: nil)
     }
   
     

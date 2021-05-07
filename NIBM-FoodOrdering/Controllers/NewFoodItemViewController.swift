@@ -105,6 +105,11 @@ class NewFoodItemViewController: UIViewController,UIPickerViewDelegate, UIPicker
         let price = Price.text
         let catId = CatId.text
        
+        if foodName!.isEmpty || description!.isEmpty || discount!.isEmpty || category!.isEmpty || price!.isEmpty
+        {
+            AlertMesg(msg: "Enter all fields")
+        }
+        else{
         var ref: DocumentReference? = nil
         ref = db.collection("FoodItems").addDocument(data: [
             "name": foodName as Any,
@@ -113,7 +118,6 @@ class NewFoodItemViewController: UIViewController,UIPickerViewDelegate, UIPicker
             "type": category as Any,
             "category":catId as Any,
             "discount":discount as Any
-            
             
             
         ]) { err in
@@ -128,9 +132,19 @@ class NewFoodItemViewController: UIViewController,UIPickerViewDelegate, UIPicker
                 self.Categories.text = ""
                 self.Price.text = ""
                 self.CatId.text = ""
+                
+                self.AlertMesg(msg: "Data added successfully")
             }
         }
-        
+        }
+    }
+    func AlertMesg(msg:String)
+    {
+        let dialogMessage = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        dialogMessage.addAction(ok)
+         
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 }
     

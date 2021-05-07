@@ -200,7 +200,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JT-7R-lw4" userLabel="PasswordView">
-                                <rect key="frame" x="58" y="448" width="298" height="0.0"/>
+                                <rect key="frame" x="58" y="448" width="298" height="113"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="mZe-tG-Gm8">
                                         <rect key="frame" x="0.0" y="20" width="298" height="137"/>
@@ -215,9 +215,6 @@
                                     </textField>
                                 </subviews>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="rB6-ps-eaB">
-                                <rect key="frame" x="87" y="143" width="240" height="148"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41h-3T-KY0">
                                 <rect key="frame" x="132" y="648" width="151" height="36"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Italic" family="Euphemia UCAS" pointSize="18"/>
@@ -236,27 +233,38 @@
                                     <action selector="loginPressed:" destination="5v2-hE-4Ub" eventType="touchUpInside" id="Wlk-ga-czK"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="rB6-ps-eaB">
+                                <rect key="frame" x="89" y="143" width="240" height="167"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ibK-5F-w36"/>
                         <color key="backgroundColor" name="BrandLightBlue"/>
                         <constraints>
-                            <constraint firstItem="7JT-7R-lw4" firstAttribute="leading" secondItem="ibK-5F-w36" secondAttribute="leading" constant="58" id="0LL-Di-cAD"/>
+                            <constraint firstItem="xd2-nu-tMA" firstAttribute="top" secondItem="7JT-7R-lw4" secondAttribute="bottom" constant="26" id="33n-JE-WhB"/>
+                            <constraint firstItem="xd2-nu-tMA" firstAttribute="top" secondItem="Mkq-A4-A98" secondAttribute="bottom" constant="110" id="8ni-vS-hEi"/>
+                            <constraint firstItem="rB6-ps-eaB" firstAttribute="top" secondItem="ibK-5F-w36" secondAttribute="top" constant="53" id="8sX-gk-HEq"/>
+                            <constraint firstItem="ibK-5F-w36" firstAttribute="trailing" secondItem="7JT-7R-lw4" secondAttribute="trailing" constant="58" id="90q-ni-eQ9"/>
                             <constraint firstItem="rB6-ps-eaB" firstAttribute="top" secondItem="ibK-5F-w36" secondAttribute="top" constant="55" id="9HX-8L-hIw"/>
                             <constraint firstItem="41h-3T-KY0" firstAttribute="top" secondItem="xd2-nu-tMA" secondAttribute="bottom" constant="8" symbolic="YES" id="Hpc-cB-q85"/>
                             <constraint firstItem="rB6-ps-eaB" firstAttribute="leading" secondItem="ibK-5F-w36" secondAttribute="leading" constant="87" id="IAU-nT-6lB"/>
-                            <constraint firstItem="7JT-7R-lw4" firstAttribute="centerX" secondItem="NR3-PA-yDz" secondAttribute="centerX" id="O19-eK-R1n"/>
+                            <constraint firstItem="7JT-7R-lw4" firstAttribute="leading" secondItem="ibK-5F-w36" secondAttribute="leading" constant="58" id="Kfm-YJ-v9Y"/>
+                            <constraint firstItem="Mkq-A4-A98" firstAttribute="top" secondItem="rB6-ps-eaB" secondAttribute="bottom" constant="50" id="NTl-ih-LYX"/>
                             <constraint firstItem="41h-3T-KY0" firstAttribute="top" secondItem="Mkq-A4-A98" secondAttribute="bottom" constant="111.5" id="Ofu-o0-weF"/>
+                            <constraint firstItem="Mkq-A4-A98" firstAttribute="leading" secondItem="ibK-5F-w36" secondAttribute="leading" constant="58" id="QKV-Q1-tpr"/>
                             <constraint firstItem="41h-3T-KY0" firstAttribute="leading" secondItem="ibK-5F-w36" secondAttribute="leading" constant="132" id="Slf-PV-88W"/>
                             <constraint firstItem="ibK-5F-w36" firstAttribute="trailing" secondItem="41h-3T-KY0" secondAttribute="trailing" constant="131" id="T7r-AG-pcC"/>
                             <constraint firstItem="ibK-5F-w36" firstAttribute="trailing" secondItem="rB6-ps-eaB" secondAttribute="trailing" constant="87" id="Vsa-KP-Nnv"/>
                             <constraint firstItem="xd2-nu-tMA" firstAttribute="top" secondItem="Mkq-A4-A98" secondAttribute="bottom" constant="50.5" id="Vyg-Qx-H8J"/>
                             <constraint firstItem="Mkq-A4-A98" firstAttribute="centerX" secondItem="NR3-PA-yDz" secondAttribute="centerX" id="YhC-Zv-kCT"/>
                             <constraint firstItem="ibK-5F-w36" firstAttribute="trailing" secondItem="xd2-nu-tMA" secondAttribute="trailing" constant="85" id="dVs-jB-XIy"/>
+                            <constraint firstItem="ibK-5F-w36" firstAttribute="trailing" secondItem="Mkq-A4-A98" secondAttribute="trailing" constant="58" id="ebZ-RP-tsP"/>
                             <constraint firstItem="xd2-nu-tMA" firstAttribute="leading" secondItem="ibK-5F-w36" secondAttribute="leading" constant="85" id="gzf-eH-P4M"/>
                             <constraint firstItem="Mkq-A4-A98" firstAttribute="centerY" secondItem="NR3-PA-yDz" secondAttribute="centerY" id="ikv-bC-lD8"/>
                             <constraint firstItem="ibK-5F-w36" firstAttribute="trailing" secondItem="7JT-7R-lw4" secondAttribute="trailing" constant="58" id="p0N-fG-W6c"/>
-                            <constraint firstItem="7JT-7R-lw4" firstAttribute="top" secondItem="rB6-ps-eaB" secondAttribute="bottom" constant="157" id="ps8-LH-qhg"/>
-                            <constraint firstItem="7JT-7R-lw4" firstAttribute="centerY" secondItem="NR3-PA-yDz" secondAttribute="centerY" id="vGk-az-b8Z"/>
+                            <constraint firstItem="ibK-5F-w36" firstAttribute="trailing" secondItem="rB6-ps-eaB" secondAttribute="trailing" constant="85" id="raw-D9-knP"/>
+                            <constraint firstItem="7JT-7R-lw4" firstAttribute="top" secondItem="rB6-ps-eaB" secondAttribute="bottom" constant="138" id="rgm-n8-Oee"/>
+                            <constraint firstItem="rB6-ps-eaB" firstAttribute="leading" secondItem="ibK-5F-w36" secondAttribute="leading" constant="89" id="u7i-bX-VyZ"/>
+                            <constraint firstItem="Mkq-A4-A98" firstAttribute="top" secondItem="rB6-ps-eaB" secondAttribute="bottom" constant="49.5" id="yMh-Wb-zBb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="uhm-SV-hgr"/>

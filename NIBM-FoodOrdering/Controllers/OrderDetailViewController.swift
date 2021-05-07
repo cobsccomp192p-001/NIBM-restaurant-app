@@ -67,7 +67,7 @@ class OrderDetailViewController: UIViewController {
     @IBAction func callBtn(_ sender: Any) {
         guard let number = URL(string: "tel://\(mobileNumber)") else { return }
         UIApplication.shared.open(number)
-    }
+    }//not working in the simulator
     
     func alertMsg()
     {
