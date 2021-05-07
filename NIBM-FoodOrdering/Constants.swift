@@ -9,6 +9,7 @@ struct K{
     
     static let registerSegue = "RegisterToFood"
     static let loginSegue = "LoginToFood"
+    static let forgotSegue = "forgotPassSegue"
     static let cellIdentifier = "ReusableCell"
     static let cellIdentifier2 = "ReusableCell2"
     static let cellIdentifier3 = "ReusableCell3"

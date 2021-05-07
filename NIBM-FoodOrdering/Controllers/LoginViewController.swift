@@ -7,7 +7,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-
+    @IBAction func forgotpassBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: K.forgotSegue, sender: self)
+    }
+    
     @IBAction func loginPressed(_ sender: UIButton) {
         
         if emailTextfield.text!.isEmpty || passwordTextfield.text!.isEmpty
