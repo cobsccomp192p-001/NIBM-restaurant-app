@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 class MyCustomCell3: UITableViewCell{
     
@@ -47,6 +48,21 @@ class OrderViewController: UIViewController {
         loadStatus()
         loadOrders()
         
+    }
+    func distanceCal(){
+        let restaurantLoc = CLLocation(latitude: 59.244696, longitude: 17.813868)
+        let customerLoc = CLLocation(latitude: 59.326354, longitude: 18.072310)
+
+        let distanceInMeters = restaurantLoc.distance(from: customerLoc) //in meters
+        
+        if(distanceInMeters <= 1000)
+         {
+         // if under 1 km change status to arriving
+         }
+         else
+        {
+         // out of 1 km
+         }
     }
 
     func loadStatus()
